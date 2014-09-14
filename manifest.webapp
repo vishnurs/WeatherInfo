@@ -1,0 +1,14 @@
+{
+  "name": "Live Weather",
+  "description": "Get the Live Weather Update of any place in the world.",
+  "launch_path": "/index.html",
+  "icons": {
+    "512": "/img/wakeup.ico",
+    "128": "/img/wakeup.ico"
+  },
+  "developer": {
+    "name": "Vishnu",
+    "url": "http://vishnurs.com"
+  },
+  "default_locale": "en"
+}

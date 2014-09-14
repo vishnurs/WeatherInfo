@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<title>Weather Info</title>
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">	
+	<link href="css/style.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+	  <div class="col-md-12 cover">
+	  	<h3>Live Weather Info</h3><br />
+	  	<h4>Know the Weather of Your City</h4> <br />
+		
+		<input type="text" id="city" placeholder="city" /><br />
+		<input type="button" class="btn btn-primary" value="Get Weather" id="submitCity" /><img id="load" src="img/3.gif" class="hide" /><br /><br />
+		<div class="alert alert-danger hide" id="errorDiv">
+		</div>
+		<table class="table table-hover hide" id="wtable">
+			<tr><td>Name</td><td id="cname"></td></tr>
+			<tr><td>Temperature</td><td id="temp"></td></tr>
+			<tr><td>Min Temp</td><td id="mintemp"></td></tr>
+			<tr><td>Max Temp</td><td id="maxtemp"></td></tr>
+			<tr><td>Weather</td><td id="clouds"></td></tr>
+			<tr><td>Wind</td><td id="wind"></td></tr>
+			<tr><td>Humidity</td><td id="humidity"></td></tr>
+			<tr><td>Latitude</td><td id="lat"></td></tr>
+			<tr><td>Longitude</td><td id="lon"></td></tr>
+		</table>
+
+
+	  </div>
+	</div>
+</div>
+ <script src="js/core.js"></script>
+</body>
+</html>
