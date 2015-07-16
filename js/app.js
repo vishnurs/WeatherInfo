@@ -30,17 +30,12 @@ controller('WeatherController', ['$scope', 'WeatherService', 'TypeAheadService',
             vm.wdata.humidity = result.main.humidity+' %';
             vm.wdata.lat = result.coord.lat;
             vm.wdata.lon = result.coord.lon;
-
-            console.log(result)
         });
 
     };
     vm.getLikeData = function() {
-
         if(vm.city !== undefined && vm.city.length > 3) {
-            console.log(vm.city);
             TypeAheadService.getWeatherTypeAhead(vm.city).then(function(result) {
-                console.log(result)
             })
         }
 
@@ -73,7 +68,6 @@ factory('Weather', ['$http','APIKEY', function($http, APIKEY) {
             API_URL = '';
             API_URL = 'http://api.openweathermap.org/data/2.5/weather?APPID='+APIKEY+'&type=like';
             API_URL = API_URL+'&q='+city;
-            console.log(API_URL)
             return $http.get(API_URL).then(function(response) {
                 return response.data;
             })
