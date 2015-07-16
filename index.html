@@ -1,40 +1,52 @@
-<!doctype html>
-<html>
-<head>
-	<title>Weather Info</title>
-	
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">	
-	<link href="css/style.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<div class="container-fluid">
-	<div class="row">
-	  <div class="col-md-12 cover">
-	  	<h3>Live Weather Info</h3><br />
-	  	<h4>Know the Weather of Your City</h4> <br />
-		
-		<input type="text" id="city" placeholder="city" /><br />
-		<input type="button" class="btn btn-primary" value="Get Weather" id="submitCity" /><img id="load" src="img/3.gif" class="hide" /><br /><br />
-		<div class="alert alert-danger hide" id="errorDiv">
-		</div>
-		<table class="table table-hover hide" id="wtable">
-			<tr><td>Name</td><td id="cname"></td></tr>
-			<tr><td>Temperature</td><td id="temp"></td></tr>
-			<tr><td>Min Temp</td><td id="mintemp"></td></tr>
-			<tr><td>Max Temp</td><td id="maxtemp"></td></tr>
-			<tr><td>Weather</td><td id="clouds"></td></tr>
-			<tr><td>Wind</td><td id="wind"></td></tr>
-			<tr><td>Humidity</td><td id="humidity"></td></tr>
-			<tr><td>Latitude</td><td id="lat"></td></tr>
-			<tr><td>Longitude</td><td id="lon"></td></tr>
-		</table>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Info</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+    <script src="js/ui-bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container" ng-app="weatherApp" ng-controller="WeatherController as main" >
+        <div class="row" style="margin-top:50px;">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <h2>Live Weather</h2>
+
+                <input type="text" ng-keyup="main.getLikeData()" class="form-control" placeholder="city" ng-model="main.city" /><br>
+
+                <input ng-click="main.getData()"  type="button" class="btn btn-warning" value="Submit" ng-typing="" />
+
+                <img src="img/infinity.gif" id="loading_gif" ng-class="main.myClass" style="height: 85px" /><br>
+
+                <div class="alert alert-danger" ng-class="main.errHide" style="margin-top:4px;">
+                Please enter a city
+                </div>
+
+                    <table class="table table-striped table-hover table-bordered" ng-class="main.tblHide" style="margin-top:10px">
+                        <tr><td>Name</td><td>{{main.wdata.name}}</td></tr>
+                        <tr><td>Temperature</td><td>{{main.wdata.temp}}</td></tr>
+                        <tr><td>Min Temp</td><td>{{main.wdata.min_temp}}</td></tr>
+                        <tr><td>Max Temp</td><td>{{main.wdata.max_temp}}</td></tr>
+                        <tr><td>Weather</td><td>{{main.wdata.weather}}</td></tr>
+                        <tr><td>Wind</td><td>{{main.wdata.wind}}</td></tr>
+                        <tr><td>Humidity</td><td>{{main.wdata.humidity}}</td></tr>
+                        <tr><td>Latitude</td><td>{{main.wdata.lat}}</td></tr>
+                        <tr><td>Longitude</td><td>{{main.wdata.lon}}</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 
 
-	  </div>
-	</div>
-</div>
- <script src="js/core.js"></script>
-</body>
+
+    <style>.hidden { display: none}</style>
+
+    <script src="js/app.js"></script>
+
+  </body>
 </html>
