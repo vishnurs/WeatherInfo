@@ -1,0 +1,21 @@
+{
+  "name": "WeatherInfo",
+  "description": "FirefoxOS App to get the weather information of any city in the World",
+  "main": "index.js",
+  "authors": [
+    "vishnurs <http://vishnurs.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vishnurs/WeatherInfo",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7"
+  }
+}

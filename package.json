@@ -1,0 +1,23 @@
+{
+  "name": "WeatherInfo",
+  "version": "1.0.0",
+  "description": "FirefoxOS App to get the weather information of any city in the World",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishnurs/WeatherInfo.git"
+  },
+  "author": "vishnurs <http://vishnurs.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vishnurs/WeatherInfo/issues"
+  },
+  "homepage": "https://github.com/vishnurs/WeatherInfo",
+  "devDependencies": {
+    "bower": "^1.6.3",
+    "coffee-script": "^1.10.0"
+  }
+}
